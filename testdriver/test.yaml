@@ -1,0 +1,27 @@
+version: 5.0.3
+session: 67ddc88dbe2c5cc56e5e12a7
+steps:
+  - prompt: click on the icon of a globe
+    commands:
+      - command: hover-image
+        description: globe icon in the taskbar
+        action: click
+  - prompt: navigate to airbnb.com
+    commands:
+      - command: focus-application
+        name: Firefox
+      - command: hover-text
+        text: Search or enter address
+        description: address bar in Firefox
+        action: click
+      - command: type
+        text: airbnb.com
+      - command: press-keys
+        keys:
+          - enter
+  - prompt: if there is a popup offer, close it
+    commands:
+      - command: hover-text
+        text: Got it
+        description: button to close the popup offer
+        action: click
